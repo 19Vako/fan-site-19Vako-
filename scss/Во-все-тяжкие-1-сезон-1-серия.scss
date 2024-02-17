@@ -276,10 +276,68 @@ a{
     }
 }
 
+
+
+.posts{
+    
+    display: flex;
+    justify-content: center; 
+    color: white;
+
+
+
+   
+
+
+    img{
+       width: 80px; 
+       height: 80px;
+       margin: 5px;
+    }
+
+
+    ul{
+        min-width: 450px;
+        flex-grow: 1;
+        max-width: 903px;
+        margin: 0;
+        padding: 0;
+
+        height: 700px; /* Укажите высоту контейнера списка */
+        overflow-y: scroll; /* Включение вертикальной прокрутки */
+        /* border: 1px solid #ccc; /* Граница для красоты */ 
+      
+    }
+    
+    h1{
+        width: 30px;
+    }
+
+    li {
+        padding-left: 20px;
+        display: flex;
+        margin-top: 5px;
+        list-style-type: none;
+        min-height: 200px;
+        background-color: $tema;
+        border-radius: 10px;
+        border:  1px solid gray;
+
+        p{
+            margin-top: 100px;
+            display: flex;
+            align-items: center;
+        }
+        }
+    }
+
+
+
+
 .fond {
     background-color: $tema;
     height: 50px;
-    margin-top: 10%;
+   
     width: 100%;
 }
   

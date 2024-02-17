@@ -15,8 +15,6 @@ var series = document.getElementsByClassName(`series`);
 var video_buttonvar = document.getElementById(`video-button`);
 
 
-
-
 function toggleLinks() {
   var linksContainer = document.getElementById("linksContainer");
   if (linksContainer.style.display === "block") {
@@ -25,8 +23,6 @@ function toggleLinks() {
     linksContainer.style.display = "block";
   }
 }
-
-
 function video_button() {
  var  video_button =  document.getElementById('video-button');
  video_button.style.display = "none";
@@ -36,8 +32,6 @@ function video_button() {
  run_video.play();
  run_video.setAttribute('controls', 'true');
 }
-
-
 var indexValue = 0;
   function SlideShow(){
     setTimeout(SlideShow, 1500)
@@ -55,15 +49,8 @@ var indexValue = 0;
   imgs[indexValue - 1].style.display = "block";
 }
 SlideShow();
-
-
-
-
-
-
-
 function ScreenAdaptation (width){
-  
+
   if(width <= 1000){
     
     for(var i = 0; i < ff.length; i++){
@@ -100,8 +87,54 @@ function ScreenAdaptation (width){
       video_buttonvar.style.cssText = `width: 140px`
   }
 }
-
-
 ScreenAdaptation(screenWidth);
 
  
+
+
+
+
+
+async function fetchPosts () {
+  const posts = await fetch('https://jsonplaceholder.typicode.com/posts')
+  return posts.json()
+}
+
+async function fetchUser () {
+  const user = await fetch('https://jsonplaceholder.typicode.com/users')
+  return user.json()
+}
+
+
+async function renderPost (){
+const posts = await fetchPosts();
+const users = await fetchUser();
+
+  
+  for(const user of users){
+    
+      posts.forEach(post =>{
+
+        if(user.id === post.userId){
+
+        const post_list = document.querySelector('.post-list')
+        const li = document.createElement('li');
+        const name = document.createElement('h1');
+        const pos = document.createElement('p');
+
+        li.classList.add('item')
+        
+        name.innerHTML = user.name;
+        pos.innerHTML = post.body;
+        
+        li.append(name, pos)
+        post_list.appendChild(li)
+        }
+      });
+    }
+  }
+
+renderPost() 
+
+
+
