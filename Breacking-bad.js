@@ -205,7 +205,7 @@ renderPost()
 
 class Blocks {
   constructor() {
-    this.menu = document.getElementById('Menu');
+    this.menu  = document.getElementById('Menu');
     this.box_1 = document.getElementById('box-1');
     this.box_2 = document.getElementById('box-2');
     this.box_3 = document.getElementById('box-3');
@@ -215,7 +215,7 @@ class Blocks {
 class Element {
   constructor() {
     this.ff = document.getElementsByClassName('ff');
-    this.p  = document.getElementsByTagName('p');
+    this.p  = document.getElementsByTagName ('p');
     this.h1 = document.getElementsByTagName('h1');
     this.h2 = document.getElementsByTagName('h2');
     this.screenWidth      = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
